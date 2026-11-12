@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Puzzle — Natal 🎄</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2:wght@700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#fff8e7">
+<meta http-equiv="Content-Language" content="pt-PT">
+<meta name="language" content="pt-PT">
+<title>VanBerto's — Puzzle · Natal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Fredoka+One&family=Baloo+2:wght@700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -641,13 +644,139 @@ body{
 #tipCard .tip-icon{font-size:20px;margin-right:6px;}
 #tipCard .tip-text{font-size:clamp(12px,3vw,14px);color:#f3fbf1;line-height:1.6;font-weight:700;}
 
+/* ═══════════════════════════════════════════════════════════════════
+   TEMA igual ao da Cibersegurança — com as cores de Natal
+   creme com pontinhos, contornos escuros e sombras de botão
+   (bloco final: sobrepõe-se ao estilo escuro anterior)
+   ═══════════════════════════════════════════════════════════════════ */
+:root{--ink:#14392a;--sun:#ffd23f;--coral:#ff6b6b;--mint:#3fbf7f;--sky:#ffd35a;--grape:#d62839;--cream:#fff8e7;--soft:#4a6556;
+  --bg:#fff8e7;--orange:#1e1b4b;--gold:#1e1b4b;--dark:#1e1b4b;}
+html,body{
+  background-color:var(--cream)!important;
+  background-image:radial-gradient(rgba(214,40,57,.20) 1.4px,transparent 1.6px)!important;
+  background-size:22px 22px!important;background-attachment:fixed;
+  color:var(--ink);animation:none!important;
+}
+.stars{display:none;}
+body{font-family:'Nunito','Trebuchet MS',sans-serif;}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+.mcard h2,.bplay,.bsec,.dbtn,.credit,.mscore,.endStat .es-val,.endStat .es-lbl,.hud-stat,.hud-stat b,.hbtn,#vbMsgFloat,#vbMsgGame,
+#victoryReveal .vr-msg,#countdownNum,#pauseOverlay .pause-txt,.resume-btn,#recordBadge,#bestScore,#pp-label,.name-label,
+#playerNameInput,#hudName,#endPlayerName,#tipCard .tip-label,#prof-tag{font-family:'Fredoka','Nunito',sans-serif;}
+
+/* ── janelas (início e fim) ── */
+.mbg{background:rgba(255,248,231,.92);backdrop-filter:none;}
+#startMod .mbg{background:transparent;}
+.mcard{background:#fff;border:4px solid var(--ink);border-radius:20px;box-shadow:0 7px 0 var(--ink);}
+.mcard::before,.mcard::after{display:none;}
+.mcard h2{color:var(--ink);text-shadow:none;font-weight:700;border-bottom:3px dotted rgba(20,57,42,.28);}
+.mcard p{color:var(--soft);}
+.credit{color:var(--ink);opacity:1;font-weight:600;}
+.bplay{background:var(--sun);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:0 4px 0 var(--ink);text-shadow:none;font-weight:600;transition:transform .08s,box-shadow .08s,background .12s;}
+.bplay:hover{background:#ffdc66;transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+.bplay:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink);}
+.bsec{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:0 4px 0 var(--ink);font-weight:600;}
+.bsec:hover{background:#fffbea;transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+.bsec:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink);}
+.dbtn{background:#fff;border:2.5px solid var(--ink);color:var(--ink);font-weight:600;box-shadow:0 3px 0 var(--ink);transition:transform .08s,box-shadow .08s,background .12s;}
+.dbtn:hover:not(.on){background:#fffbea;border-color:var(--ink);color:var(--ink);}
+.dbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink);}
+.dbtn.on{background:var(--mint);border-color:var(--ink);color:var(--ink);box-shadow:0 3px 0 var(--ink);}
+.dbtn small{font-weight:700;opacity:.85;}
+.name-label{color:var(--ink);font-weight:600;}
+#playerNameInput{background:#fff;border:3px solid var(--ink);color:var(--ink);box-shadow:0 3px 0 var(--ink);caret-color:var(--grape);}
+#playerNameInput::placeholder{color:var(--soft);opacity:.6;}
+#playerNameInput:focus{border-color:var(--ink);box-shadow:0 3px 0 var(--ink);outline:3px solid var(--grape);outline-offset:2px;}
+.bplay:focus-visible,.bsec:focus-visible,.dbtn:focus-visible,.hbtn:focus-visible,.resume-btn:focus-visible,#btnFullscreen:focus-visible{outline:3px solid var(--grape);outline-offset:3px;}
+
+/* ── fim ── */
+.mscore{color:var(--ink);text-shadow:none;font-weight:700;}
+.endStat{background:var(--cream);border:2.5px solid var(--ink);border-radius:12px;box-shadow:0 3px 0 var(--ink);}
+.endStat .es-val{color:var(--ink);text-shadow:none;font-weight:700;}
+.endStat .es-lbl{color:var(--soft);}
+.star-rating{filter:drop-shadow(0 2px 0 rgba(20,57,42,.3));}
+#endPlayerName{color:var(--grape);text-shadow:none;font-weight:700;}
+#recordBadge{background:var(--sun);color:var(--ink);border:3px solid var(--ink);box-shadow:0 3px 0 var(--ink);font-weight:700;}
+#bestScore{color:var(--soft);font-weight:700;}
+#tipCard{background:var(--cream);border:2px dashed rgba(20,57,42,.45);}
+#tipCard .tip-label{color:var(--grape);font-weight:700;}
+#tipCard .tip-text{color:var(--ink);}
+#endThumb div[style*="bottom:10px"]{background:var(--sun)!important;color:var(--ink)!important;border:2px solid var(--ink)!important;box-shadow:0 2px 0 var(--ink)!important;}
+#endThumb>div{box-shadow:0 0 0 3px var(--ink),0 6px 0 3px var(--ink)!important;animation:none!important;}
+
+/* ── jogo: HUD e barras ── */
+.hud-stat{background:#fff;border:2.5px solid var(--ink);border-radius:999px;box-shadow:0 3px 0 var(--ink);color:var(--ink);font-weight:700;}
+.hud-stat b{color:var(--ink);font-weight:700;}
+#hudName{color:var(--grape);}
+.hbtn{background:#fff;border:2.5px solid var(--ink);border-radius:999px;color:var(--ink);box-shadow:0 3px 0 var(--ink);font-weight:600;transition:transform .08s,box-shadow .08s,background .12s;}
+.hbtn:hover{background:#fffbea;border-color:var(--ink);color:var(--ink);transform:translateY(-2px);box-shadow:0 5px 0 var(--ink);}
+.hbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink);}
+.hbtn.primary{background:var(--sun);border-color:var(--ink);color:var(--ink);}
+.hbtn.primary:hover{background:#ffdc66;}
+#pp-bar-wrap,#progBar-wrap{background:#fff;border:2.5px solid var(--ink);height:13px;border-radius:999px;box-shadow:0 2px 0 var(--ink);}
+#pp-bar,#progBar{background:linear-gradient(90deg,var(--mint),var(--sky));border-radius:999px;}
+#pp-label{color:var(--ink);font-weight:700;}
+.pp-piece{opacity:.45;}
+#btnFullscreen{background:#fff;border:2.5px solid var(--ink);color:var(--ink);box-shadow:0 3px 0 var(--ink);}
+#btnFullscreen:hover{background:#fffbea;border-color:var(--ink);color:var(--ink);}
+#vb-float-prof-center,#prof-tag{color:var(--ink);text-shadow:none;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:1px 12px;box-shadow:0 2px 0 var(--ink);font-weight:700;opacity:1;}
+#prof-tag:empty{display:none;}
+
+/* ── robô e balão ── */
+#vbMsgFloat{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:0 3px 0 var(--ink);text-shadow:none;font-weight:600;}
+#vbMsgFloat::after{border-top-color:var(--ink);}
+#vbMsgFloat::before{border-top-color:#fff;}
+#vbBotFloat,#vbBotGame{filter:drop-shadow(0 4px 0 rgba(20,57,42,.35));}
+
+/* ── tabuleiro ── */
+#arena-wrap{background:#fff;border:4px solid var(--ink);outline:none;border-radius:16px;box-shadow:0 6px 0 var(--ink);}
+.piece{border:2px solid rgba(20,57,42,.35);}
+.piece:hover{border-color:var(--ink);box-shadow:0 0 0 3px var(--sun),0 4px 0 var(--ink);}
+.piece.dragging{box-shadow:0 10px 0 rgba(20,57,42,.4),0 0 0 3px var(--grape);border-color:var(--ink);}
+.piece.correct{border:3px solid var(--mint);box-shadow:0 0 0 2px var(--ink);outline:none;}
+#victoryReveal .vr-msg{background:var(--sun);color:var(--ink);border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink);backdrop-filter:none;font-weight:700;}
+#victoryReveal .vr-glow{background:linear-gradient(135deg,rgba(255,210,63,.18),rgba(63,191,127,.12));}
+#countdownOverlay,#pauseOverlay{background:rgba(255,248,231,.94);backdrop-filter:none;}
+#countdownNum{color:var(--ink);text-shadow:0 5px 0 var(--sun);font-weight:700;}
+#pauseOverlay .pause-txt{color:var(--ink);text-shadow:none;font-weight:700;}
+.resume-btn{background:var(--sun);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:0 4px 0 var(--ink);font-weight:600;}
+.resume-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+.resume-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink);}
+#lightbox{background:rgba(255,248,231,.95);}
+
+/* ── festa quando uma peça encaixa ── */
+.spark{position:absolute;font-size:16px;line-height:1;pointer-events:none;z-index:800;animation:sparkFly .9s ease-out forwards;}
+@keyframes sparkFly{
+  0%{transform:translate(-50%,-50%) scale(.4);opacity:1;}
+  100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.3) rotate(var(--rot));opacity:0;}
+}
+.zplus{position:absolute;z-index:801;pointer-events:none;white-space:nowrap;
+  background:var(--sun);color:var(--ink);border:3px solid var(--ink);border-radius:999px;box-shadow:0 3px 0 var(--ink);
+  padding:.05em .6em;font-family:'Fredoka','Nunito',sans-serif;font-weight:700;font-size:clamp(.8rem,2.2vw,1.05rem);
+  animation:zplusUp 1.1s ease-out forwards;}
+@keyframes zplusUp{
+  0%{transform:translate(-50%,-50%) scale(.3);opacity:0;}
+  20%{transform:translate(-50%,-90%) scale(1.15);opacity:1;}
+  100%{transform:translate(-50%,-190%) scale(1);opacity:0;}
+}
+@keyframes pieceOk{
+  0%{transform:scale(1);box-shadow:0 0 0 0 rgba(63,191,127,.9),0 0 0 2px var(--ink);}
+  40%{transform:scale(1.14) rotate(-2deg);box-shadow:0 0 0 10px rgba(63,191,127,0),0 0 0 2px var(--ink);}
+  100%{transform:scale(1);box-shadow:0 0 0 0 rgba(63,191,127,0),0 0 0 2px var(--ink);}
+}
+/* ── botões principais em vermelho Natal ── */
+.bplay,.resume-btn,.hbtn.primary{background:#d62839;color:#fff;}
+.bplay:hover,.hbtn.primary:hover{background:#e8485a;}
+.resume-btn:hover{background:#e8485a;}
+.bplay{text-shadow:0 1px 0 rgba(0,0,0,.25);}
+
 /* ═══ NEVE ═══ */
 #snow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1001}
-#snow span{position:absolute;top:-8vh;color:#fff;opacity:.7;animation:snowFall linear infinite;will-change:transform}
+#snow span{position:absolute;top:-8vh;color:#8ec5ee;text-shadow:0 0 2px rgba(20,57,42,.35);opacity:.85;animation:snowFall linear infinite;will-change:transform}
 @keyframes snowFall{0%{transform:translate(0,-8vh) rotate(0)}50%{transform:translate(24px,55vh) rotate(180deg)}100%{transform:translate(-12px,112vh) rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){#snow{display:none}}
 /* ═══ ROBÔ A CELEBRAR (ecrã final) ═══ */
-.win-robot{width:clamp(76px,16vw,108px);height:auto;display:block;margin:0 auto 6px;animation:vbWinBounce .8s ease-in-out infinite alternate;filter:drop-shadow(0 0 12px #7dd3fc)}
+.win-robot{width:clamp(76px,16vw,108px);height:auto;display:block;margin:0 auto 6px;animation:vbWinBounce .8s ease-in-out infinite alternate;filter:drop-shadow(0 4px 0 rgba(20,57,42,.35))}
 @keyframes vbWinBounce{from{transform:translateY(0)}to{transform:translateY(-10px)}}
 </style>
 </head>
@@ -679,6 +808,7 @@ body{
       <button class="dbtn" id="d5" onclick="setDiff('expert')">🏆 Expert<br><small>48 peças</small></button>
     </div>
 
+    <button class="bplay" id="btnContinue" style="display:none">⏩ Continuar o jogo</button>
     <button class="bplay" onclick="startGame()">🎮 Jogar!</button>
     <p class="credit">© Prof.ª Vanda Várzea</p>
   </div>
@@ -700,10 +830,6 @@ body{
     <div class="mscore" id="endScore">0 mov</div>
 
     <div id="endStats">
-      <div class="endStat">
-        <div class="es-val" id="esTime">0:00</div>
-        <div class="es-lbl">Tempo</div>
-      </div>
       <div class="endStat">
         <div class="es-val" id="esMoves">0</div>
         <div class="es-lbl">Movimentos</div>
@@ -742,7 +868,6 @@ body{
       <div class="hud-stat">👤 <span id="hudName">—</span></div>
       <div class="hud-stat">🎯 <b id="moves">0</b> mov</div>
       <div class="hud-stat">🧩 <b id="correct">0</b>/<b id="total">0</b></div>
-      <div class="hud-stat">⏱ <b id="timerEl">0s</b></div>
     </div>
     <div style="display:flex;gap:7px;">
       <button class="hbtn" id="btnPause" onclick="togglePause()">⏸ Pausa</button>
@@ -872,12 +997,48 @@ document.getElementById('playerNameInput').addEventListener('keydown', e=>{
 document.getElementById('playerNameInput').addEventListener('input', e=>{
   const name = e.target.value.trim();
   const bubble = document.querySelector('#startMod .vb-bubble');
+  if(!bubble) return;
   if(name){
     bubble.innerHTML = 'Olá, <b>' + name.charAt(0).toUpperCase() + name.slice(1) + '</b>!<br>Vamos montar o puzzle de<br><b>Natal! 🎄</b>';
   } else {
     bubble.innerHTML = 'Olá! Sou o VanBerto\'s!<br>Vamos montar o puzzle de<br><b>Natal! 🎄</b>';
   }
 });
+
+// ── GUARDAR NOME E JOGO (continua mesmo depois de sair) ──
+const VB_NAME_KEY='vb_playername',VB_SAVE_KEY='vb_puzzle_natal_save';
+function vbSaveName(n){try{localStorage.setItem(VB_NAME_KEY,n);}catch(e){}}
+function vbSaveGame(){
+  try{
+    if(gameWon||!pieces.length||!moves)return;
+    localStorage.setItem(VB_SAVE_KEY,JSON.stringify({diff,moves,pos:pieces.map(p=>[parseInt(p.dataset.cc),parseInt(p.dataset.cr)])}));
+  }catch(e){}
+}
+function vbClearSave(){try{localStorage.removeItem(VB_SAVE_KEY);}catch(e){}vbRefreshContinue();}
+function vbLoadSave(){
+  try{
+    const d=JSON.parse(localStorage.getItem(VB_SAVE_KEY)||'null');
+    if(d&&['easy','normal','hard','vhard','expert'].includes(d.diff)&&Array.isArray(d.pos))return d;
+  }catch(e){}
+  return null;
+}
+function vbRefreshContinue(){
+  const b=document.getElementById('btnContinue');
+  if(b)b.style.display=vbLoadSave()?'':'none';
+}
+document.getElementById('btnContinue').addEventListener('click',()=>{
+  const d=vbLoadSave();if(!d){vbRefreshContinue();return;}
+  setDiff(d.diff);
+  window._vbResume=d;
+  startGame();
+});
+document.getElementById('playerNameInput').addEventListener('input',e=>vbSaveName(e.target.value.trim()));
+window.addEventListener('pagehide',vbSaveGame);
+(function(){
+  let n='';try{n=localStorage.getItem(VB_NAME_KEY)||'';}catch(e){}
+  if(n)document.getElementById('playerNameInput').value=n;
+  vbRefreshContinue();
+})();
 
 // ── INTERNET SAFETY TIPS ──
 const TIPS = [
@@ -960,10 +1121,6 @@ function togglePause(){
   } else {
     overlay.classList.remove('show');
     btn.textContent = '⏸ Pausa';
-    timerInt = setInterval(()=>{
-      seconds++;
-      document.getElementById('timerEl').textContent=seconds<60?seconds+'s':Math.floor(seconds/60)+'m '+seconds%60+'s';
-    },1000);
     soundResume();
   }
 }
@@ -1252,6 +1409,7 @@ function showStart(){
   document.getElementById('endMod').style.display='none';
   document.getElementById('startMod').style.display='flex';
   clearInterval(timerInt);
+  vbRefreshContinue();
 }
 
 // ── PRE-LOAD IMAGE CACHE ──
@@ -1268,10 +1426,12 @@ function preloadImg(cb){
 function startGame(){
   // Read and save player name
   const nameInput = document.getElementById('playerNameInput');
-  playerName = (nameInput.value || '').trim();
+  playerName = (nameInput.value || '').trim() || 'Herói';
+  vbSaveName(playerName);
+  if(!window._vbResume) vbClearSave();
   // Update HUD name
   const hudName = document.getElementById('hudName');
-  hudName.textContent = playerName || '—';
+  hudName.textContent = playerName;
 
   document.getElementById('startMod').style.display='none';
   document.getElementById('endMod').style.display='none';
@@ -1343,7 +1503,6 @@ function initGame(){
   const d=getDims();cols=d.c;rows=d.r;
   moves=0;seconds=0;gameWon=false;
   document.getElementById('moves').textContent=0;
-  document.getElementById('timerEl').textContent='0s';
   document.getElementById('correct').textContent=0;
   document.getElementById('total').textContent=cols*rows;
   document.getElementById('pp-bar').style.width='0%';
@@ -1356,10 +1515,7 @@ function initGame(){
   vr.classList.remove('show');
 
   clearInterval(timerInt);
-  timerInt=setInterval(()=>{
-    seconds++;
-    document.getElementById('timerEl').textContent=seconds<60?seconds+'s':Math.floor(seconds/60)+'m '+seconds%60+'s';
-  },1000);
+  /* (cronómetro removido — o jogo já não conta o tempo) */
 
   const startMsgs = diff==='expert'?VB_START_EXPERT:diff==='vhard'?VB_START_HARD:VB_START;
   // Personalise first message with name if available
@@ -1384,6 +1540,14 @@ function initGame(){
   let attempts=0;
   do{shuffle(pos);attempts++;}
   while(attempts<10&&pos.some((p,i)=>p.c===Math.floor(i%cols)&&p.r===Math.floor(i/cols)));
+
+  if(window._vbResume){
+    const d=window._vbResume;window._vbResume=null;
+    if(d.pos&&d.pos.length===pos.length){
+      for(let i=0;i<pos.length;i++)pos[i]={c:d.pos[i][0],r:d.pos[i][1]};
+      moves=d.moves||0;document.getElementById('moves').textContent=moves;
+    }
+  }
 
   // Use cached image (already loaded before countdown)
   const dpr = window.devicePixelRatio || 1;
@@ -1501,10 +1665,36 @@ function snap(el){
   if(nowOk&&!wasOk){
     vbRnd(VB_CORRECT);
     // Pulse effect
-    el.style.animation='correctPulse .6s ease';
+    el.style.animation='pieceOk .6s cubic-bezier(.34,1.56,.64,1)';
+    celebratePiece(el);
     setTimeout(()=>el.style.animation='',700);
   }
   updateCorrect(true);
+  vbSaveGame();
+}
+
+/* ── FESTA: faíscas e "Boa! ⭐" quando a peça encaixa no sítio certo ── */
+const PRAISE_PIECE=['Boa!','Isso!','Uau!','Certo!','Top!'];
+function celebratePiece(el){
+  const arena=document.getElementById('arena');
+  if(!arena) return;
+  const cx=parseFloat(el.style.left)+el.offsetWidth/2, cy=parseFloat(el.style.top)+el.offsetHeight/2;
+  for(let n=0;n<8;n++){
+    const s=document.createElement('span');
+    s.className='spark';s.textContent=['⭐','❄️','✨'][n%3];
+    s.style.left=cx+'px';s.style.top=cy+'px';
+    const ang=(n/8)*Math.PI*2+Math.random()*.5,dist=30+Math.random()*34;
+    s.style.setProperty('--dx',Math.cos(ang)*dist+'px');
+    s.style.setProperty('--dy',Math.sin(ang)*dist+'px');
+    s.style.setProperty('--rot',(Math.random()*180-90)+'deg');
+    arena.appendChild(s);
+    setTimeout(()=>s.remove(),1100);
+  }
+  const p=document.createElement('span');
+  p.className='zplus';p.textContent=PRAISE_PIECE[Math.floor(Math.random()*PRAISE_PIECE.length)]+' ⭐';
+  p.style.left=cx+'px';p.style.top=cy+'px';
+  arena.appendChild(p);
+  setTimeout(()=>p.remove(),1200);
 }
 
 function updateCorrect(moved){
@@ -1528,6 +1718,7 @@ function updateCorrect(moved){
 
 // ── VICTORY SEQUENCE ──
 function triggerWin(){
+  vbClearSave();
   soundWin();
   // 1. Confetti on arena
   launchConfettiOnArena();
@@ -1548,7 +1739,6 @@ function triggerWin(){
 }
 
 function showEndModal(){
-  const m=seconds<60?seconds+'s':Math.floor(seconds/60)+'m '+seconds%60+'s';
   const total=cols*rows;
   // Tighter thresholds for harder difficulties
   const geniusMult = diff==='expert'?1.5:diff==='vhard'?1.8:2;
@@ -1557,7 +1747,6 @@ function showEndModal(){
   const isGood=moves<total*goodMult;
 
   document.getElementById('endScore').textContent=moves+' movimentos';
-  document.getElementById('esTime').textContent=m;
   document.getElementById('esMoves').textContent=moves;
 
   // Player name greeting
@@ -1648,6 +1837,7 @@ hb.addEventListener('touchcancel',()=>{ho.style.opacity=0;});
 
 document.getElementById('btnNew').onclick=()=>{
   gameWon=false;
+  vbClearSave();
   document.getElementById('victoryReveal').classList.remove('show');
   showCountdown(()=>initGame());
 };
